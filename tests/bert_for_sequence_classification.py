@@ -339,7 +339,7 @@ def main():
                         help='Number of hidden layers for the BERT model. A vanila BERT has 12 hidden layers (default: 1)')
     parser.add_argument('--data-dir', type=str, default='./cola_public/raw',
                         help='Path to the bert data directory')
-    parser.add_argument("--local_rank", type=int), default=0,
+    parser.add_argument("--local_rank", type=int, default=0,
                         help='Local rank for distributed training')
     args = parser.parse_args()
 
