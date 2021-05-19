@@ -346,7 +346,7 @@ def main():
     # Device (CPU vs CUDA)
     if torch.cuda.is_available() and not args.no_cuda:
         torch.cuda.set_device(args.local_rank)
-        #device = torch.device("cuda")
+        device = torch.device("cuda")
         print('There are %d GPU(s) available.' % torch.cuda.device_count())
         print('We will use the GPU:', torch.cuda.get_device_name(args.local_rank))
     else:
