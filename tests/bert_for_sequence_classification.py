@@ -15,6 +15,7 @@ import random
 import time
 import datetime
 
+
 import onnxruntime
 from torch_ort import ORTModule
 
@@ -313,7 +314,7 @@ def format_time(elapsed):
 
 def main():
     # 1. Basic setup
-    parser = argparse.ArgumentParser(description='PyTorch MNIST Example')
+    parser = argparse.ArgumentParser(description='BERT training with torch-ort')
     parser.add_argument('--pytorch-only', action='store_true', default=False,
                         help='disables ONNX Runtime training')
     parser.add_argument('--batch-size', type=int, default=32, metavar='N',
@@ -338,14 +339,16 @@ def main():
                         help='Number of hidden layers for the BERT model. A vanila BERT has 12 hidden layers (default: 1)')
     parser.add_argument('--data-dir', type=str, default='./cola_public/raw',
                         help='Path to the bert data directory')
-
+    parser.add_argument("--local_rank", type=int), default=0,
+                        help='Local rank for distributed training')
     args = parser.parse_args()
 
     # Device (CPU vs CUDA)
     if torch.cuda.is_available() and not args.no_cuda:
-        device = torch.device("cuda")
+        torch.cuda.set_device(args.local_rank)
+        #device = torch.device("cuda")
         print('There are %d GPU(s) available.' % torch.cuda.device_count())
-        print('We will use the GPU:', torch.cuda.get_device_name(0))
+        print('We will use the GPU:', torch.cuda.get_device_name(args.local_rank))
     else:
         print('No GPU available, using the CPU instead.')
         device = torch.device("cpu")
