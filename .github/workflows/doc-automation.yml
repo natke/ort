@@ -34,7 +34,9 @@ jobs:
 #        python3 -m pip install onnxruntime-training+cpu
 #        python3 -m pip install torch-ort+cpu
     - name: Build the docset
-      run: cd ./docs/sphinx ; export PATH=$PATH:$(python3 -m site --user-base)/bin/ ; make html
+      run: |
+        cd ./docs/sphinx ; export PATH=$PATH:$(python3 -m site --user-base)/bin/ ; make html
+        cd ./docs/sphinx/build/html; touch .nojekyll
       id: build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
