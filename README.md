@@ -2,7 +2,7 @@
 
 <p align="center"><img width="50%" src="images/ONNX_Runtime_logo_dark.png" /></p>
 
-**A library for developing and deploying PyTorch models using the ONNX Runtime**.
+**A library for developing and deploying PyTorch models using ONNX Runtime**.
 
 ---
 
@@ -25,40 +25,13 @@
 
 # Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+A library for accelerating PyTorch models using ONNX Runtime:
 
-**Key Features:**
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- Inference PyTorch directly from PyTorch framework while leveraging ONNX Runtime execution provider optimizations
+- torch-ort to train PyTorch models faster with ONNX Runtime
+- moe to scale large models and improve their quality
+- torch-ort-infer to perform inference on PyTorch models with ONNX Runtime and Intel OpenVINO
 
 # 🚀 Installation
-
-## Inference
-
-### Prerequisites
-
-- Ubuntu 18.04, 20.04
-- Python* 3.7, 3.8 or 3.9
-
-### Install in a local Python environment
-- `pip install torch-ort-infer[openvino]`
-- Run post installation configuration script `python -m torch_ort.configure`
-
-### Verify your installation
-
-1. Clone this repo
-
-    - `git clone git@github.com:pytorch/ort.git`
-
-2. Install extra dependencies
-
-    - `pip install wget pandas sklearn transformers`
-
-3. Run the training script
-
-    - `python ./torch_ort_inference/tests/bert_for_sequence_classification.py`
 
 ## Training
 
@@ -69,7 +42,6 @@ You need a machine with at least one NVIDIA or AMD GPU to run ONNX Runtime for P
 You can install and run torch-ort in your local environment, or with [Docker](torch_ort/docker/README.md).
 
 ### Install in a local Python environment
-
 
 By default, torch-ort depends on PyTorch 1.9.0, ONNX Runtime 1.9.0 and CUDA 10.2.
 
@@ -97,7 +69,7 @@ Get install instructions for other combinations in the `Get Started Easily` sect
 
     - `pip install wget pandas sklearn transformers`
 
-3. Run the training script
+3. Run a test training script
 
     - `python ./ort/tests/bert_for_sequence_classification.py`
 
@@ -110,6 +82,7 @@ Get install instructions for other combinations in the `Get Started Easily` sect
 - Python* 3.7, 3.8 or 3.9
 
 ### Install in a local Python environment
+
 - `pip install torch-ort-infer[openvino]`
 - Run post installation configuration script `python -m torch_ort.configure`
 
@@ -123,13 +96,13 @@ Get install instructions for other combinations in the `Get Started Easily` sect
 
     - `pip install wget pandas sklearn transformers`
 
-3. Run the training script
+3. Run a test script
 
     - `python ./torch_ort_inference/tests/bert_for_sequence_classification.py`
 
 # 📈 Training
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Samples
 
